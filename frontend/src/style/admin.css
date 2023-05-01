@@ -1,0 +1,95 @@
+#admin-add-product, #dashboard-body{
+    background-color: var(--bgColor);
+    width: 768px;
+    margin: auto;
+    padding: 1rem;
+    border: 0.5rem;
+    margin-top: 0.1rem;
+}
+#admin-add-product form>div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+#admin-add-product form>div label{
+    width: 30%;
+    color: var(--textColor);
+}
+#admin-add-product form>div input, #admin-add-product form>div select{
+    width: 60%;
+    padding: 0.8rem;
+    border: 1px solid var(--textColor);
+    border-radius: 0.5rem;
+}
+#admin-add-product form>div img{
+    width: 60%;
+}
+#admin-add-product form>div input[type=file]{
+    border: none;
+}
+#admin-add-product form input[type=submit]{
+    border: 1px solid var(--textColor);
+    border-radius: 0.5rem;
+    color: var(--bgColor);
+    background-color: var(--textColor);
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.8rem 0;
+    cursor: pointer;
+}
+
+/* dashboard-body */
+#dashboard-body>div>div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    color: var(--textColor);
+    padding: 0.5rem;
+    margin: 1rem 0;
+}
+#dashboard-body>div>div a{
+    color: var(--textColor);
+}
+#dashboard-body>div>div p:nth-child(1){
+    width: 10%;
+}
+#dashboard-body>div>div p:nth-child(2){
+    width: 40%;
+}
+#dashboard-body>div>div span{
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    #admin-add-product, #dashboard-body{
+        width: 95%;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    #admin-add-product form>div label{
+        width: 20%;
+    }
+    #admin-add-product form>div input, #admin-add-product form>div select{
+        width: 70%;
+    }
+    #admin-add-product form>div:nth-child(4){
+        display: block;
+        text-align: center;
+    }
+    #admin-add-product form>div img{
+        width: 90%;
+    }
+    #admin-add-product form input[type=submit]{
+        font-size: 1rem;
+        font-weight: 400;
+        padding: 0.6rem 0;
+    }
+}
+
+

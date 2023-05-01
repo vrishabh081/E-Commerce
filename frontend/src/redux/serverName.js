@@ -1,0 +1,1 @@
+export const serverName = "https://e-commerce-server-k1d8.onrender.com";

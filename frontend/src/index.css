@@ -1,13 +1,96 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
+:root {
+  --bgColor: #fff;
+  --smallScreenbgColor: #eee;
+  --textColor: #007332;
+  --activeColor: #007332;
+  --notActiveColor: #007332b0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+body{
+  background-color: #eee;
+  margin-bottom: 5rem;
+}
+
+a{
+  text-decoration: none;
+}
+ul li{
+  list-style: none;
+}
+h1, h2, h3{
+  color: var(--textColor);
+  text-align: center;
+  margin: 2rem 0;
+}
+p{
+  color: var(--textColor);
+}
+input:focus, select:focus{
+  outline: none;
+}
+
+.main-btn{
+  background-color: var(--textColor);
+  color: var(--bgColor);
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 0.1s linear;
+}
+.main-btn:hover{
+  background-color: #005726;
+  color: var(--bgColor);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--textColor);
+  border-radius: 0.3rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+@media screen and (max-width: 768px) {
+  h1{
+    margin: 1rem 0;
+    font-size: 1.8rem;
+  }
+  h2{
+    margin: 1rem 0;
+    font-size: 1.6rem;
+  }
+}
+img{
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  h1{
+    font-size: 1.5rem;
+  }
+  h1{
+    font-size: 1.3rem;
+  }
 }

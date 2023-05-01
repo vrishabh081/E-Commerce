@@ -1,0 +1,112 @@
+#user-order{
+    background-color: var(--bgColor);
+    width: 90%;
+    margin: auto;
+    padding: 1rem;
+    margin-top: 0.1rem;
+}
+
+#user-order>div>div{
+    display: flex;
+    margin: auto;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    max-width: 768px;
+}
+
+#user-order>div>div>div{
+    margin: 0 1rem;
+    padding: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 50%;
+}
+#user-order>div>div>div:last-child p{
+    margin: 0 1rem;
+}
+
+#user-order-products>div{
+    display: flex;
+    gap: 2rem;
+}
+#user-order-products>div img{
+    width: 7rem;
+}
+
+
+@media screen and (max-width: 768px) {
+    #user-order{
+        width: 95%;
+        padding: 0.5rem;
+    }
+    #user-order>div>div>div{
+        margin: 0 0.5rem;
+        width: 100%;
+    }
+    #user-order>div>div>div:last-child p{
+        margin: 0 0.5rem;
+    }
+    #user-order-products>div img{
+        width: 6.5rem;
+    }
+    #user-order-products>div{
+        display: flex;
+        gap: 1rem;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    #user-order{
+        width: 100%;
+    }
+    #user-order>div>div{
+        display: block;
+    }
+    #user-order>div>div>div{
+        margin: 0;
+        width: 80%;
+        margin: auto;
+    }
+    #user-order>div>div>div:last-child p{
+        margin: 0 0.5rem;
+    }
+    #user-order-products>div{
+        display: flex;
+        justify-content: space-around;
+    }
+    #user-order-products>div p{
+        width: 10rem;
+    }
+}
+
+#main-edit-order-menu{
+    position: relative;
+}
+#edit-order-menu{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+@media screen and (max-width: 480px) {
+    #user-order>div>div{
+        display: block;
+    }
+    #user-order>div>div>div{
+        width: 100%;
+    }
+    #user-order>div>div>div:last-child p{
+        margin: 0;
+    }
+    #user-order-products>div{
+        display: flex;
+        justify-content: space-around;
+    }
+    #user-order-products>div p{
+        width: 7rem;
+    }
+    #user-order-products>div img{
+        width: 90%;
+    }
+}
