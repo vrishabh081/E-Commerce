@@ -1,10 +1,11 @@
+import { serverName } from "../../serverName";
 import * as types from "./actionType";
 import axios from "axios"; 
 
 // get cart-
 export const getCartFun = (user) => (dispatch) => {
     dispatch({type: types.GET_CART_REQUEST})
-    return axios.get(`http://localhost:8080/api/v1/cart`, { headers: {"Authorization" : `${user}`} })
+    return axios.get(`${serverName}/api/v1/cart`, { headers: {"Authorization" : `${user}`} })
             .then((res)=>{
                 dispatch({type: types.GET_CART_SUCCESS, cart: res.data})
             })
@@ -16,7 +17,7 @@ export const getCartFun = (user) => (dispatch) => {
 // add cart-
 export const addCartFun = (payload, user) => (dispatch) => {
     dispatch({type: types.ADD_CART_REQUEST})
-    return axios.post(`http://localhost:8080/api/v1/add-cart`, payload, { headers: {"Authorization" : `${user}`} })
+    return axios.post(`${serverName}/api/v1/add-cart`, payload, { headers: {"Authorization" : `${user}`} })
             .then((res)=>{
                 // console.log(res.data)
                 dispatch({type: types.ADD_CART_SUCCESS, addCartRes: res.data})
@@ -31,7 +32,7 @@ export const addCartFun = (payload, user) => (dispatch) => {
 export const updateCartFun = (_id, newQ, user) => (dispatch) => {
 
     dispatch({type: types.UPDATE_CART_REQUEST})
-    return axios.patch(`http://localhost:8080/api/v1/update-cart/${_id}`, {newQ}, { headers: {"Authorization" : `${user}`} })
+    return axios.patch(`${serverName}/api/v1/update-cart/${_id}`, {newQ}, { headers: {"Authorization" : `${user}`} })
             .then((res)=>{
                 // console.log(res.data)
                 dispatch({type: types.UPDATE_CART_SUCCESS, updateCartRes: res.data})
@@ -45,7 +46,7 @@ export const updateCartFun = (_id, newQ, user) => (dispatch) => {
 // delete cart-
 export const deleteCartFun = (_id, user) => (dispatch) => {
     dispatch({type: types.DELETE_CART_REQUEST})
-    return axios.delete(`http://localhost:8080/api/v1/delete-cart/${_id}`, { headers: {"Authorization" : `${user}`} })
+    return axios.delete(`${serverName}/api/v1/delete-cart/${_id}`, { headers: {"Authorization" : `${user}`} })
             .then((res)=>{
                 // console.log(res.data)
                 dispatch({type: types.DELETE_CART_SUCCESS, deleteCartRes: res.data})
@@ -59,7 +60,7 @@ export const deleteCartFun = (_id, user) => (dispatch) => {
 // delete all cart-
 export const deleteAllCartFun = (user) => (dispatch) => {
     dispatch({type: types.DELETE_ALL_CART_REQUEST})
-    return axios.delete(`http://localhost:8080/api/v1/delete-all-cart`, { headers: {"Authorization" : `${user}`} })
+    return axios.delete(`${serverName}/api/v1/delete-all-cart`, { headers: {"Authorization" : `${user}`} })
             .then((res)=>{
                 // console.log(res.data)
                 dispatch({type: types.DELETE_ALL_CART_SUCCESS, deleteAllCartRes: res.data})

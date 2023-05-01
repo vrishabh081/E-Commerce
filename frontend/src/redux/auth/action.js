@@ -1,10 +1,11 @@
+import { serverName } from "../serverName.js";
 import * as types from "./actionType.js";
 import axios from "axios"; 
 
 // sign up-
 export const signUpFun = (payload) => (dispatch) => {
     dispatch({type: types.SIGN_UP_REQUEST})
-    return axios.post(`http://localhost:8080/api/v1/register`, payload)
+    return axios.post(`${serverName}/api/v1/register`, payload)
             .then((res)=>{
                 console.log(res.data)
                 dispatch({type: types.SIGN_UP_SUCCESS, signup: res.data})
@@ -19,7 +20,7 @@ export const signUpFun = (payload) => (dispatch) => {
 // log in-
 export const logInFun = (payload) => (dispatch) => {
     dispatch({type: types.LOG_IN_REQUEST})
-    return axios.post(`http://localhost:8080/api/v1/login`, payload)
+    return axios.post(`${serverName}/api/v1/login`, payload)
             .then((res)=>{
                 console.log(res.data)
                 dispatch({type: types.LOG_IN_SUCCESS, login: res.data})
@@ -34,7 +35,7 @@ export const logInFun = (payload) => (dispatch) => {
 // get profile-
 export const getProfileFun = (user) => (dispatch) => {
     dispatch({type: types.GET_PROFILE_REQUEST})
-    return axios.get(`http://localhost:8080/api/v1/single-user-detail`, { headers: {"Authorization" : `${user}`} })
+    return axios.get(`${serverName}/api/v1/single-user-detail`, { headers: {"Authorization" : `${user}`} })
             .then((res)=>{
                 dispatch({type: types.GET_PROFILE_SUCCESS, singleUserDetail: res.data})
             })
@@ -47,7 +48,7 @@ export const getProfileFun = (user) => (dispatch) => {
 // add cart-
 export const setAddressFun = (payload, user) => (dispatch) => {
     dispatch({type: types.SET_ADDRESS_REQUEST})
-    return axios.patch(`http://localhost:8080/api/v1/set-address`, payload, { headers: {"Authorization" : `${user}`} })
+    return axios.patch(`${serverName}/api/v1/set-address`, payload, { headers: {"Authorization" : `${user}`} })
             .then((res)=>{
                 // console.log(res.data)
                 dispatch({type: types.SET_ADDRESS_SUCCESS, addressRes: res.data})

@@ -1,10 +1,11 @@
+import { serverName } from "../../serverName";
 import * as types from "./actionType";
 import axios from "axios"; 
 
 // send order-
 export const sendOrderFun = (payload, user) => (dispatch) => {
     dispatch({type: types.SEND_ORDER_REQUEST})
-    return axios.post(`http://localhost:8080/api/v1/send-order`, payload, { headers: {"Authorization" : `${user}`} })
+    return axios.post(`${serverName}/api/v1/send-order`, payload, { headers: {"Authorization" : `${user}`} })
             .then((res)=>{
                 // console.log(res.data)
                 dispatch({type: types.SEND_ORDER_SUCCESS, sendOrderRes: res.data})
@@ -18,7 +19,7 @@ export const sendOrderFun = (payload, user) => (dispatch) => {
 // get user order-
 export const getUserOrderFun = (user) => (dispatch) => {
     dispatch({type: types.GET_USER_ORDER_REQUEST})
-    return axios.get(`http://localhost:8080/api/v1/user-order`, { headers: {"Authorization" : `${user}`} })
+    return axios.get(`${serverName}/api/v1/user-order`, { headers: {"Authorization" : `${user}`} })
             .then((res)=>{
                 // console.log(res.data)
                 dispatch({type: types.GET_USER_ORDER_SUCCESS, userOrderRes: res.data})
@@ -32,7 +33,7 @@ export const getUserOrderFun = (user) => (dispatch) => {
 // send order-
 export const getAllOrderFun = (user) => (dispatch) => {
     dispatch({type: types.GET_ALL_ORDER_REQUEST})
-    return axios.get(`http://localhost:8080/api/v1/all-order`, { headers: {"Authorization" : `${user}`} })
+    return axios.get(`${serverName}/api/v1/all-order`, { headers: {"Authorization" : `${user}`} })
             .then((res)=>{
                 // console.log(res.data)
                 dispatch({type: types.GET_ALL_ORDER_SUCCESS, allOrderRes: res.data})

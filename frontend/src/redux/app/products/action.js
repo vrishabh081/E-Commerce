@@ -1,10 +1,11 @@
+import { serverName } from "../../serverName";
 import * as types from "./actionType";
 import axios from "axios"; 
 
 // get all products-
 export const getProductsFun = (filter = "") => (dispatch) => {
     dispatch({type: types.GET_PRODUCTS_REQUEST})
-    return axios.get(`http://localhost:8080/api/v1/products?category=${filter}`, )
+    return axios.get(`${serverName}/api/v1/products?category=${filter}`, )
             .then((res)=>{
                 // console.log(res.data)
                 dispatch({type: types.GET_PRODUCTS_SUCCESS, products: res.data})
@@ -18,7 +19,7 @@ export const getProductsFun = (filter = "") => (dispatch) => {
 // get single product-
 export const getSingleProductFun = (_id) => (dispatch) => {
     dispatch({type: types.GET_SINGLE_PRODUCT_REQUEST})
-    return axios.get(`http://localhost:8080/api/v1/product/${_id}`, )
+    return axios.get(`${serverName}/api/v1/product/${_id}`, )
             .then((res)=>{
                 // console.log(res.data)
                 dispatch({type: types.GET_SINGLE_PRODUCT_SUCCESS, singleProduct: res.data})
