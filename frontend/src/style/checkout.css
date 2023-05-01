@@ -76,4 +76,21 @@
     #checkout{
         width: 100%;
     }
+
+    /* successfull-payment */
+    #successfull-payment{
+        width: 100%;
+    }
+    #successfull-order-last-section{
+        background-color: var(--bgColor);
+        padding: 1rem;
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    #successfull-order-last-section a{
+        color: var(--textColor);
+        font-size: 1.1rem;
+    }
 }
