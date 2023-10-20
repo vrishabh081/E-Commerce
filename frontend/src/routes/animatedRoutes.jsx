@@ -14,10 +14,11 @@ import Profile from '../pages/profile'
 import UserOrder from '../pages/userOrder'
 import SuccessfullPayment from '../pages/successfullPayment'
 import AdminOrder from '../pages/adminOrder'
+import { useTranslation } from 'react-i18next'
 
 const AnimatedRoutes = () => {
   const location = useLocation();
-
+  const { t } = useTranslation();
 
   return (
     <AnimatePresence>
@@ -25,7 +26,7 @@ const AnimatedRoutes = () => {
           <Route path='/' element={<Home/>} />
           <Route path='/login' element={<Login/>} />
           <Route path='/signup' element={<Signup/>} />
-          <Route path='/shopping' element={<Shop/>} />
+          <Route path='/shopping' element={<Shop t={t} />} />
           <Route path='/shopping/:_id' element={<SingleOrderPage/>} />
           <Route path='/cart' element={<Cart/>} />
           <Route path='/checkout' element={<Checkout/>} />

@@ -1,0 +1,6 @@
+{
+    "Welcome": "{{a}}",
+    "greeting": "Bonjour, {{name}} !",
+    "orderDescription": "Commande {{filterValue}}"
+}
+  

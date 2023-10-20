@@ -5,7 +5,7 @@ import { getProductsFun } from '../redux/app/products/action';
 import ShopItems from '../components/shopItems';
 import { motion } from 'framer-motion'
 
-const Shop = () => {
+const Shop = ({t}) => {
     const [filter, setFilter] = useState("");
     const dispatch = useDispatch();
     const data = useSelector((store) => store.productReducer);
@@ -16,6 +16,7 @@ const Shop = () => {
         dispatch(getProductsFun(filter))
     }, [filter])
 
+    console.log(t)
 
     return (
             <motion.div id='shop'
@@ -23,7 +24,7 @@ const Shop = () => {
                 animate={{opacity: 1}}
                 exit={{opacity: 0}}
             >
-                <h1>Order {filter || "something"}</h1>
+                <h1>{t('orderDescription', { filterValue: filter || "something" })}</h1>
                 <div id="filter-sort-section">
                     <select onChange={(e)=>setFilter(e.target.value)}>
                         <option value="">Select</option>
